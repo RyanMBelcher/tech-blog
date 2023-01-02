@@ -26,9 +26,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/dashboard', withAuth, async (req, res) => {
+// router.get('/dashboard', withAuth, async (req, res) => {
 
-});
+// });
 
 // login
 router.post('/login', async (req, res) => {

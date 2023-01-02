@@ -1,14 +1,7 @@
-module.exports = {
-    format_time: (date) => {
-        return date.toLocaleTimeString();
-    },
-    format_date: (date) => {
-        const month = date.getMonth()
-        const day = date.getDate()
-        const year = date.getFullYear()
+const router = require('express').Router();
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-        const formattedDate = `${month}/${day}/${year}`
+router.get('/', async (req, res) => {
 
-        return formattedDate;
-    }
-};
+});

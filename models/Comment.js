@@ -27,6 +27,13 @@ Comment.init(
             },
         },
     },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'comments'
+    }
 );
 
 module.exports = Comment
