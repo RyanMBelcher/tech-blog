@@ -1,0 +1,16 @@
+[
+    {
+        "comment": "This is such a great book",
+        "comment_user": "georgie""blog_id": "1"
+    },
+    {
+        "comment": "That is a great point",
+        "comment_user": "DT",
+        "blog_id": "2"
+    },
+    {
+        "comment": "Not sure I can agree with that",
+        "comment_user": "SQLnomas",
+        "blog_id": "3"
+    }
+]
