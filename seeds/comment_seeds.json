@@ -1,7 +1,8 @@
 [
     {
         "comment": "This is such a great book",
-        "comment_user": "georgie""blog_id": "1"
+        "comment_user": "georgie",
+        "blog_id": "1"
     },
     {
         "comment": "That is a great point",
