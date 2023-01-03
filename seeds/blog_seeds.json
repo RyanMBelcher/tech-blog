@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Must Read",
+        "content": "All programmers, no matter what level, must read The Pragmatic Programmer by Thomas and Hunt",
+        "user_id": "1"
+    },
+    {
+        "title": "On the Importance of MVC",
+        "content": "One of the many reasons MVC is important is it helps to organize your code",
+        "user_id": "2"
+    },
+    {
+        "title": "Databases",
+        "content": "SQL is life",
+        "user_id": "3"
+    }
+]
