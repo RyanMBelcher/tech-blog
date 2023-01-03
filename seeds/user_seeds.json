@@ -1,14 +1,17 @@
 [
     {
         "username": "webdevguy",
+        "email": "webdevguy@email.com",
         "password": "password1234"
     },
     {
         "username": "fragile_feet",
+        "email": "chiefland@email.com",
         "password": "gobirds9876"
     },
     {
         "username": "wildflower",
+        "email": "wildflower@email.com",
         "password": "wildflower1986"
     }
 ]
