@@ -12,12 +12,10 @@ router.get('/', async (req, res) => {
                 }
             ]
         });
-
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-
         res.render('homepage', {
             blogs,
-            logged_in: req.session.logged_in,
+            loggedIn: req.session.loggedIn,
         });
 
     }
@@ -30,54 +28,14 @@ router.get('/', async (req, res) => {
 
 // });
 
-// login
-router.post('/login', async (req, res) => {
-    try {
-        const dbUserData = await User.findOne({
-            where: {
-                username: req.body.username,
-            },
-        });
-
-        if (!dbUserData) {
-            res
-                .status(400)
-                .json({ message: 'Username or Password is invalid!' });
-            return;
-        }
-
-        const validPassword = await dbUserData.checkPassword(req.body.password);
-
-        if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Username or Password is invalid!' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.loggedIn = true;
-
-            res
-                .status(200)
-                .json({ user: dbUserData, message: 'You are now logged in!' })
-        });
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
     }
-    catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+    res.render('login');
 });
 
-// logout
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
-})
+
 
 module.exports = router;
