@@ -1,0 +1,11 @@
+<section class="card">
+    <a href="/blog/{{id}}">
+        <header>{{blog.title}}</header>
+    </a>
+    <h5>{{blog.user.dataValues.username}}</h5>
+    <p>{{blog.content}}</p>
+    {{#each blog.comments as |comment|}}
+    <p>{{comment.dataValues.comment}}</p>
+    <h5>{{comment.dataValues.comment_user}}</h5>
+    {{/each}}
+</section>
