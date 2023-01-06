@@ -1,4 +1,4 @@
-<section class="card">
+{{!-- <section class="card">
     <a href="/blog/{{id}}">
         <header>{{blog.title}}</header>
     </a>
@@ -8,4 +8,26 @@
     <p>{{comment.dataValues.comment}}</p>
     <h5>{{comment.dataValues.comment_user}}</h5>
     {{/each}}
-</section>
+</section> --}}
+
+<div class='container-fluid mt-5 blog-container'>
+    <div>
+
+        <h2>{{blog.title}}</h2>
+
+        <h4>posted by: {{blog.user.dataValues.username}}</h4>
+        <p>{{blog.content}}</p>
+    </div>
+</div>
+<div class='container-fluid mt-5 blog-container'>
+    <div>
+
+        <h2>Comments</h2>
+        {{#each blog.comments as |comment|}}
+        <p>{{comment.dataValues.comment}}</p>
+        {{/each}}
+    </div>
+</div>
+<div class='container-fluid mt-5 custom-button'>
+    <button type="button" class="btn btn-primary">Comment</button>
+</div>

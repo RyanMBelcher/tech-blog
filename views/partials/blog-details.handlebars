@@ -1,6 +1,10 @@
-<section class="card">
-    <a href="/blog/{{id}}">
-        <header>{{title}}</header>
-    </a>
+<section class="container-fluid mt-5 blog-container">
+    <header class='blog-header'>
+        <a href="/blog/{{id}}">
+            <h2>{{title}}</h2>
+
+        </a>
+        <span>posted by: {{user}} on: {{format_date}}</span>
+    </header>
     <p>{{content}}</p>
 </section>
