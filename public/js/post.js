@@ -5,14 +5,16 @@ const newPostHandler = async (event) => {
     const content = document.querySelector('#blog-content').value.trim();
 
     if (title && content) {
-        const response = await fetch('/api/new-post', {
+        const stream = await fetch('/api/blog/new-post', {
             method: 'POST',
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' },
+            session: { userId: 1 }
         });
-
-        if (response.ok) {
-            document.location.replace(`/blog/${response.body.id}`);
+        const blog = await stream.json();
+        console.log(blog);
+        if (stream.ok) {
+            document.location.replace(`/blog/${blog.id}`);
         } else {
             alert('Failed to post!')
         }
@@ -22,3 +24,4 @@ const newPostHandler = async (event) => {
 document
     .querySelector('#new-post-form')
     .addEventListener('submit', newPostHandler);
+

@@ -11,12 +11,13 @@
 </section> --}}
 
 <div class='container-fluid mt-5 blog-container'>
-    <div>
+    <div class='blog-list'>
 
         <h2>{{blog.title}}</h2>
 
         <h4>posted by: {{blog.user.dataValues.username}}</h4>
         <p>{{blog.content}}</p>
+
     </div>
 </div>
 <div class='container-fluid mt-5 blog-container'>
@@ -31,3 +32,11 @@
 <div class='container-fluid mt-5 custom-button'>
     <button type="button" class="btn btn-primary">Comment</button>
 </div>
+<div class='container-fluid mt-5 custom-button'>
+    <button type="button" class="btn btn-primary">Update</button>
+</div>
+<div class='container-fluid mt-5 custom-button'>
+    <button type="button" class="btn btn-primary" id="delete-btn" data-id='{{blog.id}}'>Delete</button>
+</div>
+
+<script src='../js/delete.js'></script>
