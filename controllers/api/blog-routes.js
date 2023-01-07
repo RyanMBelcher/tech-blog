@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // create a new blog post
 router.post('/new-post', withAuth, async (req, res) => {
+    console.log('made it here');
     try {
         const newBlog = await Blog.create({
             title: req.body.title,
@@ -19,7 +20,18 @@ router.post('/new-post', withAuth, async (req, res) => {
 });
 
 // update a blog post
-
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const updatedBlog = await Blog.update({
+            title: req.body.title,
+            content: req.body.content,
+            user_id: req.session.userId,
+        });
+        res.status(200).json(updatedBlog);
+    } catch (err) {
+        res.status(500);
+    }
+});
 
 // delete a blog post
 router.delete('/:id', withAuth, async (req, res) => {

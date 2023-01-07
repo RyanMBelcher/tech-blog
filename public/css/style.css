@@ -7,6 +7,19 @@ body {
     justify-content: flex-start;
 }
 
+a {
+    text-decoration: none;
+    color: #372829;
+}
+
+a:hover {
+    color: #726255;
+}
+
+.custom-header {
+    background-color: #ecb939;
+    color: #37282f;
+}
 
 .main {
     display: flex;
@@ -17,14 +30,22 @@ body {
 .blog-container {
     border: 2px solid #aaa;
     width: 80%;
+    padding: 0;
 }
 
 .blog-header {
     border-bottom: 2px solid #aaa;
     margin-bottom: 3px;
+    background-color: #ecb939;
 }
 
 .custom-button {
     display: flex;
     justify-content: center;
+}
+
+#logout-btn {
+    background: none;
+    border: none;
+    padding: 7px;
 }

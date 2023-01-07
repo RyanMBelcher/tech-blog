@@ -32,11 +32,14 @@
 <div class='container-fluid mt-5 custom-button'>
     <button type="button" class="btn btn-primary">Comment</button>
 </div>
-<div class='container-fluid mt-5 custom-button'>
+{{#if showActions}}
+<div class='container-fluid mt-5 custom-button' id='update-btn'>
     <button type="button" class="btn btn-primary">Update</button>
 </div>
 <div class='container-fluid mt-5 custom-button'>
     <button type="button" class="btn btn-primary" id="delete-btn" data-id='{{blog.id}}'>Delete</button>
 </div>
+{{/if}}
 
 <script src='../js/delete.js'></script>
+<script src='../js/update.js'></script>

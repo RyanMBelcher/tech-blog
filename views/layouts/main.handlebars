@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <header>
-        <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <header class='custom-header'>
+        <nav class='navbar navbar-expand-lg'>
             <div class='collapse navbar-collapse'>
-                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                <ul class='navbar-nav me-auto mb-2 mx-5 mb-lg-0'>
                     <li class='nav-item'>
                         <a class='nav-link active' href='/'>Home</a>
                     </li>
@@ -23,7 +23,7 @@
                     </li>
                     {{#if loggedIn}}
                     <li class='nav-item'>
-                        <button id='logout' class='btn-no-style'>Logout</button>
+                        <button id='logout-btn' class='btn-no-style'>Logout</button>
                     </li>
                     {{else}}
                     <li class='nav-item'>
@@ -31,7 +31,7 @@
                     </li>
                     {{/if}}
                 </ul>
-                <h1 class='navbar-text'>The Tech Blog</h1>
+                <h1 class='navbar-text mx-5'>The Tech Blog</h1>
             </div>
         </nav>
     </header>
