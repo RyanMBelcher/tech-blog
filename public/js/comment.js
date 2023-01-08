@@ -1,28 +1,26 @@
-const newPostHandler = async (event) => {
+const newCommentHandler = async (event) => {
     event.preventDefault();
 
-    const id = event.target.getAttribute('data-user-id');
-
-    const title = document.querySelector('#blog-title').value.trim();
-    const content = document.querySelector('#blog-content').value.trim();
-
-    if (title && content) {
+    const comment = document.querySelector('#comment').value.trim();
+    console.log(comment);
+    if (comment) {
         const stream = await fetch('/api/blog/new-post', {
             method: 'POST',
-            body: JSON.stringify({ title, content }),
+            body: JSON.stringify({ comment }),
             headers: { 'Content-Type': 'application/json' },
             session: { userId: id }
         });
         const blog = await stream.json();
+
         if (stream.ok) {
             document.location.replace(`/blog/${blog.id}`);
         } else {
             alert('Failed to post!')
         }
     }
+
 };
 
 document
-    .querySelector('#new-post-form')
-    .addEventListener('submit', newPostHandler);
-
+    .querySelector('#new-comment-form')
+    .addEventListener('submit', newCommentHandler)

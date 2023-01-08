@@ -1,15 +1,3 @@
-{{!-- <section class="card">
-    <a href="/blog/{{id}}">
-        <header>{{blog.title}}</header>
-    </a>
-    <h5>{{blog.user.dataValues.username}}</h5>
-    <p>{{blog.content}}</p>
-    {{#each blog.comments as |comment|}}
-    <p>{{comment.dataValues.comment}}</p>
-    <h5>{{comment.dataValues.comment_user}}</h5>
-    {{/each}}
-</section> --}}
-
 <div class='container-fluid mt-5 blog-container'>
     <div class='blog-list'>
 
@@ -29,16 +17,30 @@
         {{/each}}
     </div>
 </div>
-<div class='container-fluid mt-5 custom-button'>
-    <button type="button" class="btn btn-primary">Comment</button>
-</div>
+{{!-- <div class='container-fluid mt-5 custom-button'>
+    <button type='button' class='btn btn-primary'>Comment</button>
+</div> --}}
 {{#if showActions}}
 <div class='container-fluid mt-5 custom-button' id='update-btn'>
-    <a class="btn btn-primary" href='/blog/{{blog.id}}/edit'>Update</a>
+    <a class='btn btn-primary' href='/blog/{{blog.id}}/edit'>Update</a>
 </div>
 <div class='container-fluid mt-5 custom-button'>
-    <button type="button" class="btn btn-primary" id="delete-btn" data-id='{{blog.id}}'>Delete</button>
+    <button type='button' class='btn btn-primary' id='delete-btn' data-id='{{blog.id}}'>Delete</button>
 </div>
+{{/if}}
+
+
+{{#if loggedIn}}
+<form class='container-fluid mt-5 custom-button' id='new-comment-form'>
+    <div class='mb-3'>
+        <label for='comment' class='form-label'>Comment:</label>
+        <textarea cols='150' rows='5' class='form-control' id='comment'></textarea>
+    </div>
+
+    </div>
+    <div class=' container-fluid mt-5 custom-button'>
+        <button type='button' class='btn btn-primary' id='' data-id='{{blog.id}}'>Comment</button>
+</form>
 {{/if}}
 
 <script src='../js/delete.js'></script>

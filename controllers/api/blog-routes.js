@@ -4,27 +4,27 @@ const withAuth = require('../../utils/auth');
 
 // create a new blog post
 router.post('/new-post', withAuth, async (req, res) => {
-    console.log('made it here');
     try {
         const newBlog = await Blog.create({
             title: req.body.title,
             content: req.body.content,
             user_id: req.session.userId,
         });
-        console.log(newBlog);
         res.status(200).json(newBlog);
     } catch (err) {
-        console.error(err);
         res.status(500).json(err);
     }
 });
 
 // update a blog post
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id/edit', withAuth, async (req, res) => {
     try {
         const updatedBlog = await Blog.update(
             req.body,
-            { where: { id: req.params.id } }
+            {
+                where:
+                    { id: req.params.id }
+            }
 
         );
         res.status(200).json(updatedBlog);

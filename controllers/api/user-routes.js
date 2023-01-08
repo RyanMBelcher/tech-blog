@@ -9,15 +9,12 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-
-        console.log(userData.dataValues.id);
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.userId = userData.dataValues.id;
             res.status(200).json(userData);
         });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -30,7 +27,6 @@ router.post('/login', async (req, res) => {
                 email: req.body.email,
             },
         });
-        console.log('userData', userData);
         if (!userData) {
             res
                 .status(400)
@@ -57,7 +53,6 @@ router.post('/login', async (req, res) => {
         });
     }
     catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });

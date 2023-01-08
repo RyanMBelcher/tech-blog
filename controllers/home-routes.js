@@ -62,16 +62,12 @@ router.get('/blog/:id', async (req, res) => {
                     },
                 ],
             });
-            console.log(blogData.comments);
+
             const blog = blogData.get();
-            console.log(req.session.user_id === blog.user.dataValues.id);
-            console.log(req.session.user_id);
-            console.log(blog.user.dataValues.id);
-            console.log(req.session);
-            console.log(blog.user);
+
             res.render('blog', { blog, loggedIn: req.session.loggedIn, userId: req.session.userId, showActions: req.session.userId === blog.user.dataValues.id });
         } catch (err) {
-            console.log(err);
+
             res.status(500).json(err)
         }
     }
@@ -98,7 +94,6 @@ router.get('/new-post', (req, res) => {
         res.redirect('/login');
         return
     }
-    console.log('userId', req.session);
     res.render('new-post', {
         loggedIn: req.session.loggedIn,
         userId: req.session.userId,
@@ -106,7 +101,6 @@ router.get('/new-post', (req, res) => {
 });
 
 router.get('/blog/:id/edit', async (req, res) => {
-    console.log('requesting route');
     if (!req.session.loggedIn) {
         res.redirect('/login');
     } else {
@@ -123,16 +117,10 @@ router.get('/blog/:id/edit', async (req, res) => {
                     },
                 ],
             });
-            console.log(blogData.comments);
             const blog = blogData.get();
-            console.log(req.session.user_id === blog.user.dataValues.id);
-            console.log(req.session.user_id);
-            console.log(blog.user.dataValues.id);
-            console.log(req.session);
-            console.log(blog.user);
+
             res.render('update', { blog, loggedIn: req.session.loggedIn, userId: req.session.userId, showActions: req.session.userId === blog.user.dataValues.id });
         } catch (err) {
-            console.log(err);
             res.status(500).json(err)
         }
     }

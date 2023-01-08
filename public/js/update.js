@@ -5,7 +5,6 @@ const updateButtonHandler = async (event) => {
     const title = document.getElementById('#blog-title');
     const content = document.getElementById('#blog-content');
     const id = event.target.getAttribute('blog-id');
-    console.log(id);
     const response = await fetch(`/api/blog/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
