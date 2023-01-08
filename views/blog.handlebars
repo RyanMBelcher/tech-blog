@@ -2,7 +2,6 @@
     <div class='blog-list'>
 
         <h2>{{blog.title}}</h2>
-
         <h4>posted by: {{blog.user.dataValues.username}}</h4>
         <p>{{blog.content}}</p>
 
@@ -39,8 +38,9 @@
 
     </div>
     <div class=' container-fluid mt-5 custom-button'>
-        <button type='button' class='btn btn-primary' id='' data-id='{{blog.id}}'>Comment</button>
+        <button type='submit' class='btn btn-primary' id='' data-id='{{blog.id}}'>Comment</button>
 </form>
 {{/if}}
 
+<script src='../js/comment.js'></script>
 <script src='../js/delete.js'></script>
