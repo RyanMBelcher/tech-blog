@@ -105,4 +105,37 @@ router.get('/new-post', (req, res) => {
     });
 });
 
+router.get('/blog/:id/edit', async (req, res) => {
+    console.log('requesting route');
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } else {
+        try {
+            const blogData = await Blog.findByPk(req.params.id, {
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username', 'id'],
+                    },
+                    {
+                        model: Comment,
+                        attributes: ['comment', 'comment_user'],
+                    },
+                ],
+            });
+            console.log(blogData.comments);
+            const blog = blogData.get();
+            console.log(req.session.user_id === blog.user.dataValues.id);
+            console.log(req.session.user_id);
+            console.log(blog.user.dataValues.id);
+            console.log(req.session);
+            console.log(blog.user);
+            res.render('update', { blog, loggedIn: req.session.loggedIn, userId: req.session.userId, showActions: req.session.userId === blog.user.dataValues.id });
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err)
+        }
+    }
+});
+
 module.exports = router;

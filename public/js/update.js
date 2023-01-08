@@ -1,15 +1,21 @@
+
 const updateButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
+    event.preventDefault();
 
-        const response = await fetch(`/api/blog/${id}`, {
-            method: 'UPDATE',
-        });
+    const title = document.getElementById('#blog-title');
+    const content = document.getElementById('#blog-content');
+    const id = event.target.getAttribute('blog-id');
+    console.log(id);
+    const response = await fetch(`/api/blog/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ title, content }),
+        headers: { 'Content-Type': 'application/json' },
+    });
 
-        if (response.ok) {
-            document.location.replace
-        }
+    if (response.ok) {
+        document.location.replace('/dashboard')
     }
+
 };
 
 const updateBtn = document

@@ -34,7 +34,7 @@
 </div>
 {{#if showActions}}
 <div class='container-fluid mt-5 custom-button' id='update-btn'>
-    <button type="button" class="btn btn-primary">Update</button>
+    <a class="btn btn-primary" href='/blog/{{blog.id}}/edit'>Update</a>
 </div>
 <div class='container-fluid mt-5 custom-button'>
     <button type="button" class="btn btn-primary" id="delete-btn" data-id='{{blog.id}}'>Delete</button>
@@ -42,4 +42,3 @@
 {{/if}}
 
 <script src='../js/delete.js'></script>
-<script src='../js/update.js'></script>

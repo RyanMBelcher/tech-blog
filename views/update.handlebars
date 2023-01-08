@@ -1,0 +1,17 @@
+<p>Update</p>
+<form class='container-fluid mt-5 blog-container' id='new-post-form' data-user-id='{{userId}}'>
+    <input type='hidden' class='blog-id' value='{{blog.id}}'>
+    <div class='mb-3'>
+        <label for='blog-title' class='form-label'>Title:</label>
+        <input type='text' class='form-control' id='blog-title' value='{{blog.title}}'>
+    </div>
+    <div class='mb-3'>
+        <label for='blog-content' class='form-label'>Post:</label>
+        <textarea cols='150' rows='10' class='form-control' id='blog-content'>{{blog.content}}</textarea>
+    </div>
+    <div class='container-fluid mt-5 custom-button'>
+        <button type='submit' class='btn btn-primary'>Submit</button>
+    </div>
+</form>
+
+<script src='../public/js/update.js'></script>
