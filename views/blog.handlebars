@@ -30,17 +30,18 @@
 
 
 {{#if loggedIn}}
-<form class='container-fluid mt-5 custom-button' id='new-comment-form'>
-    <div class='mb-3'>
+<form class='container-fluid mt-5 custom-button' id='new-comment-form' data-blog-id='{{blog.id}}'>
+    <div class=' mb-3'>
         <label for='comment' class='form-label'>Comment:</label>
         <textarea cols='150' rows='5' class='form-control' id='comment'></textarea>
     </div>
 
     </div>
     <div class=' container-fluid mt-5 custom-button'>
-        <button type='submit' class='btn btn-primary' id='' data-id='{{blog.id}}'>Comment</button>
+        <button type='submit' class='btn btn-primary' id=''>Comment</button>
 </form>
 {{/if}}
 
-<script src='../js/comment.js'></script>
+<script src=' ../js/comment.js'></script>
 <script src='../js/delete.js'></script>
+<script src='../js/logout.js'></script>

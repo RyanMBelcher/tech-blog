@@ -1,5 +1,6 @@
 <h1>Update</h1>
-<form class='container-fluid mt-5 blog-container' id='new-post-form' data-user-id='{{userId}}'>
+<form class='container-fluid mt-5 blog-container' id='update-post-form' data-user-id='{{userId}}'
+    data-blog-id='{{blog.id}}'>
     <input type='hidden' class='blog-id' value='{{blog.id}}'>
     <div class='mb-3'>
         <label for='blog-title' class='form-label'>Title:</label>
@@ -16,4 +17,5 @@
 
 
 
-<script src='../js/update.js'></script>
+<script src='../../js/update.js'></script>
+<script src='../../js/logout.js'></script>

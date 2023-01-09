@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // create a new blog post
@@ -17,7 +17,7 @@ router.post('/new-post', withAuth, async (req, res) => {
 });
 
 // update a blog post
-router.put('/:id/edit', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const updatedBlog = await Blog.update(
             req.body,
@@ -27,6 +27,7 @@ router.put('/:id/edit', withAuth, async (req, res) => {
             }
 
         );
+        console.log(updatedBlog);
         res.status(200).json(updatedBlog);
     } catch (err) {
         res.status(500);
@@ -51,6 +52,21 @@ router.delete('/:id', withAuth, async (req, res) => {
         res.status(200).json(blogData);
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.post('/:id/comment', withAuth, async (req, res) => {
+    console.log('made it here');
+    try {
+        const newComment = await Comment.create({
+            comment: req.body.comment,
+            comment_user: req.session.userId,
+            blog_id: req.params.id,
+        });
+        console.log(newComment);
+        res.status(200).json(newComment);
+    } catch (err) {
+        res.status(500);
     }
 });
 

@@ -2,23 +2,25 @@
 const updateButtonHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.getElementById('#blog-title');
-    const content = document.getElementById('#blog-content');
-    const id = event.target.getAttribute('blog-id');
+    const title = document.getElementById('blog-title').value.trim();
+    const content = document.getElementById('blog-content').value.trim();
+    const id = event.target.getAttribute('data-blog-id');
     const response = await fetch(`/api/blog/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: { 'Content-Type': 'application/json' },
     });
-
+    console.log(response);
     if (response.ok) {
         document.location.replace('/dashboard')
+    } else {
+        alert('Failed to update post!')
     }
 
 };
 
 const updateBtn = document
-    .querySelector('#update-btn');
+    .querySelector('#update-post-form');
 if (updateBtn) {
-    updateBtn.addEventListener('click', updateButtonHandler);
+    updateBtn.addEventListener('submit', updateButtonHandler);
 }
