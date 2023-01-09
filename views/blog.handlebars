@@ -1,8 +1,9 @@
 <div class='container-fluid mt-5 blog-container'>
     <div class='blog-list'>
-
-        <h2>{{blog.title}}</h2>
-        <h4>posted by: {{blog.user.username}} on {{format_date blog.createdAt}}</h4>
+        <header class='blog-header'>
+            <h2>{{blog.title}}</h2>
+            <span>posted by: {{blog.user.username}} on {{format_date blog.createdAt}}</span>
+        </header>
         <p>{{blog.content}}</p>
 
     </div>
@@ -10,7 +11,7 @@
 <div class='container-fluid mt-5 blog-container'>
     <div>
 
-        <h2>Comments</h2>
+        <h2 class='blog-header'>Comments</h2>
         {{#each blog.comments as |comment|}}
         {{log this}}
         <p>{{comment.comment}} <br>
@@ -20,9 +21,6 @@
         {{/each}}
     </div>
 </div>
-{{!-- <div class='container-fluid mt-5 custom-button'>
-    <button type='button' class='btn btn-primary'>Comment</button>
-</div> --}}
 {{#if showActions}}
 <div class='container-fluid mt-5 custom-button' id='update-btn'>
     <a class='btn btn-primary custom-btn' href='/blog/{{blog.id}}/edit'>Update</a>

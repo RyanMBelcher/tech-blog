@@ -4,7 +4,6 @@ const newCommentHandler = async (event) => {
     const comment = document.querySelector('#comment').value.trim();
     const id = event.target.getAttribute('data-blog-id');
 
-    console.log(comment);
     if (comment) {
         const response = await fetch(`/api/blog/${id}/comment`, {
             method: 'POST',
@@ -12,7 +11,6 @@ const newCommentHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
             // session: { userId: id }
         });
-        console.log(response);
         if (response.ok) {
             document.location.reload();
         } else {
