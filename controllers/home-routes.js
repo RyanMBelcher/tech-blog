@@ -38,8 +38,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.render('dashboard', {
             blogs,
             loggedIn: req.session.loggedIn,
+            username: req.session.username,
         });
+        console.log(blogs);
     }
+
     catch (err) {
         res.status(500).json(err);
     }
