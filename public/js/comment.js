@@ -3,7 +3,7 @@ const newCommentHandler = async (event) => {
 
     const comment = document.querySelector('#comment').value.trim();
     const id = event.target.getAttribute('data-blog-id');
-    console.log(id);
+
     console.log(comment);
     if (comment) {
         const response = await fetch(`/api/blog/${id}/comment`, {
@@ -14,7 +14,7 @@ const newCommentHandler = async (event) => {
         });
         console.log(response);
         if (response.ok) {
-            document.location.replace('/')
+            document.location.reload();
         } else {
             alert('Failed to post comment!')
         }
