@@ -2,7 +2,7 @@
     <div class='blog-list'>
 
         <h2>{{blog.title}}</h2>
-        <h4>posted by: {{blog.user.dataValues.username}} on {{format_date blog.createdAt}}</h4>
+        <h4>posted by: {{blog.user.username}} on {{format_date blog.createdAt}}</h4>
         <p>{{blog.content}}</p>
 
     </div>
@@ -12,8 +12,9 @@
 
         <h2>Comments</h2>
         {{#each blog.comments as |comment|}}
-        <p>{{comment.dataValues.comment}} <br>
-            -- {{comment.dataValues.comment_user}} on {{format_date comment.dataValues.created_at}}
+        {{log this}}
+        <p>{{comment.comment}} <br>
+            -- {{comment.comment_user}} on {{format_date comment.created_at}}
         </p>
 
         {{/each}}
