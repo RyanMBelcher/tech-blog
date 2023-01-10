@@ -30,7 +30,7 @@ No installation required for this app.
 
 This app is deployed on Heroku:
 
-https://git.heroku.com/sheltered-brushlands-54086.git 
+https://sheltered-brushlands-54086.herokuapp.com/
 
 ![screenshot of sign up page](./public/images/blog_signup.png)
 
