@@ -9,6 +9,11 @@ body {
 
 }
 
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
 a {
     text-decoration: none;
     color: #372829;
@@ -36,7 +41,6 @@ a:hover {
 
 .blog-container {
     border: 2px solid #aaa;
-    width: 80%;
     padding: 0;
 }
 
@@ -45,14 +49,21 @@ a:hover {
     margin-bottom: 3px;
     background-color: #ecb939;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: baseline;
+    padding: 5px;
 }
 
-.custom-button {
+#page-title {
+    background-color: #37282f;
+    color: #ecb939;
+    padding: 5px;
+}
+
+/* .custom-button {
     display: flex;
     justify-content: center;
-}
+} */
 
 .custom-btn {
     background-color: #ecb939;

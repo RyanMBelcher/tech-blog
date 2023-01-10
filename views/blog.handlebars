@@ -8,6 +8,16 @@
 
     </div>
 </div>
+
+{{#if showActions}}
+<div class='container-fluid mt-5 d-grid gap-2 d-md-flex justify-content-md-end' id='update-btn'>
+    <a class='btn btn-primary custom-btn' href='/blog/{{blog.id}}/edit'>Update</a>
+    <button type='button' class='btn btn-primary custom-btn' id='delete-btn' data-id='{{blog.id}}'>Delete</button>
+</div>
+
+{{/if}}
+
+
 <div class='container-fluid mt-5 blog-container'>
     <div>
 
@@ -21,26 +31,17 @@
         {{/each}}
     </div>
 </div>
-{{#if showActions}}
-<div class='container-fluid mt-5 custom-button' id='update-btn'>
-    <a class='btn btn-primary custom-btn' href='/blog/{{blog.id}}/edit'>Update</a>
-</div>
-<div class='container-fluid mt-5 custom-button'>
-    <button type='button' class='btn btn-primary custom-btn' id='delete-btn' data-id='{{blog.id}}'>Delete</button>
-</div>
-{{/if}}
-
 
 {{#if loggedIn}}
-<form class='container-fluid mt-5 custom-button' id='new-comment-form' data-blog-id='{{blog.id}}'>
+<form class='container-fluid mt-5' id='new-comment-form' data-blog-id='{{blog.id}}'>
     <div class=' mb-3'>
         <label for='comment' class='form-label'>Comment:</label>
         <textarea cols='150' rows='5' class='form-control' id='comment'></textarea>
     </div>
 
     </div>
-    <div class=' container-fluid mt-5 custom-button'>
-        <button type='submit' class='btn btn-primary custom-btn' id=''>Comment</button>
+    <div class=' container-fluid mt-5 d-grid gap-2 d-md-flex justify-content-md-end'>
+        <button type='submit' class='btn btn-primary custom-btn'>Comment</button>
 </form>
 {{/if}}
 

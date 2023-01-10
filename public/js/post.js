@@ -2,7 +2,7 @@ const newPostHandler = async (event) => {
     event.preventDefault();
 
     const id = event.target.getAttribute('data-user-id');
-
+    console.log(document.querySelector('#blog-title'));
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
 
