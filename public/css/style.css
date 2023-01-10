@@ -1,17 +1,27 @@
 body {
     font-family: Arial;
-    margin: 0;
+    margin: 0 0 75px;
+    padding-bottom: 25px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
     background-color: rgb(240, 199, 94, 0.3);
+}
 
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 main {
     width: 80%;
     margin: 0 auto;
+}
+
+a.nav-link {
+    color: #372829;
 }
 
 a {
@@ -31,6 +41,13 @@ a:hover {
 .custom-footer {
     background-color: #ecb939;
     color: #37282f;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
 }
 
 .main {
@@ -41,7 +58,7 @@ a:hover {
 
 .blog-container {
     border: 2px solid #aaa;
-    padding: 0;
+    padding: 0px;
 }
 
 .blog-header {
@@ -54,20 +71,23 @@ a:hover {
     padding: 5px;
 }
 
-#page-title {
-    background-color: #37282f;
-    color: #ecb939;
+.blog-text {
     padding: 5px;
 }
 
-/* .custom-button {
-    display: flex;
-    justify-content: center;
-} */
+#page-title {
+    background-color: #37282f;
+    color: #ecb939;
+    padding: 5px 25px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #726255;
+}
 
 .custom-btn {
     background-color: #ecb939;
     color: #37282f;
+    border-radius: 8px;
+    border-style: none;
 }
 
 .custom-btn:hover {
@@ -78,7 +98,8 @@ a:hover {
 #logout-btn {
     background: none;
     border: none;
-    padding: 7px;
+    padding: 8px;
+    color: #372829;
 }
 
 #dashboard-welcome {

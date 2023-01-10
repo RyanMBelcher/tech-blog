@@ -16,18 +16,18 @@
             <div class='collapse navbar-collapse'>
                 <ul class='navbar-nav me-auto mb-2 mx-5 mb-lg-0'>
                     <li class='nav-item'>
-                        <a class='nav-link active' href='/'>Home</a>
+                        <a class='nav-link' href='/'>Home</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link active' href='/dashboard'>Dashboard</a>
+                        <a class='nav-link' href='/dashboard'>Dashboard</a>
                     </li>
                     {{#if loggedIn}}
                     <li class='nav-item'>
-                        <button id='logout-btn' class='btn-no-style'>Logout</button>
+                        <button id='logout-btn' class='btn-no-style nav-link'>Logout</button>
                     </li>
                     {{else}}
                     <li class='nav-item'>
-                        <a class='nav-link active' href='/login'>Login</a>
+                        <a class='nav-link' href='/login'>Login</a>
                     </li>
                     {{/if}}
                 </ul>
@@ -44,8 +44,9 @@
     </main>
     {{#if loggedIn}}
     {{/if}}
-    <div class='mt-5 p-4 bg-dark text-white text-center custom-footer'>
-        <p>Footer</p>
-    </div>
+
+    <footer class='custom-footer'>
+
+    </footer>
 
 </html>

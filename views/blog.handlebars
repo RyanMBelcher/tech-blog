@@ -4,7 +4,7 @@
             <h2>{{blog.title}}</h2>
             <span>posted by: {{blog.user.username}} on {{format_date blog.createdAt}}</span>
         </header>
-        <p>{{blog.content}}</p>
+        <p class='blog-text'>{{blog.content}}</p>
 
     </div>
 </div>
@@ -24,7 +24,7 @@
         <h2 class='blog-header'>Comments</h2>
         {{#each blog.comments as |comment|}}
         {{log this}}
-        <p>{{comment.comment}} <br>
+        <p class='blog-text'>{{comment.comment}} <br>
             -- {{comment.comment_user}} on {{format_date comment.created_at}}
         </p>
 
