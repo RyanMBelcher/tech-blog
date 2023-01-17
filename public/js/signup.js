@@ -15,7 +15,16 @@ const signUpFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert('Failed to sign up!')
+            const responseBody = await response.json()
+            const hasEmailError = responseBody.errors.find(error =>
+                error.message === 'email must be unique'
+            )
+            if (hasEmailError) {
+                alert('A user with this email address already exists. Please enter a new email address.')
+            }
+            else {
+                alert('Failed to sign up!')
+            }
         }
     }
 };
