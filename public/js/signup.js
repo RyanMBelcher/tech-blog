@@ -19,8 +19,13 @@ const signUpFormHandler = async (event) => {
             const hasEmailError = responseBody.errors.find(error =>
                 error.message === 'email must be unique'
             )
+            const hasUsernameError = responseBody.errors.find(error =>
+                error.message === 'username must be unique'
+            )
             if (hasEmailError) {
                 alert('A user with this email address already exists. Please enter a new email address.')
+            } else if (hasUsernameError) {
+                alert('A user with this username already exists. Please enter a new username.')
             }
             else {
                 alert('Failed to sign up!')
